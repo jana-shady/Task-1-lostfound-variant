@@ -4,6 +4,7 @@ import cors from 'cors';
 import itemRoutes from './routes/items.js';
 import userRoutes from './routes/users.js';
 
+
 const app = express();
 
 app.use(morgan('dev'));
@@ -14,6 +15,7 @@ app.get('/api/health', (req, res) => res.json({ ok: true }));
 
 app.use('/api/items', itemRoutes);
 app.use('/api/users', userRoutes);
+
 
 // Not found
 app.use((req, res) => {
